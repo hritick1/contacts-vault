@@ -24,11 +24,16 @@ const handleChange=(e)=>{
    updateC[props.index]=data;
   props.setCourse(updateC);
   props.setId(null);
-
+ update(props.id);
+ toast.success("Course Updated sucessfully");
 
 
   // console.log(data);
   // setData({ title: "", description: "" });
+ }
+ const update=(Id)=>{
+  axios.put(`/courses/${Id}`,data).then(
+  )
  }
   // const updateCourse=(e,id)=>{
   //   e.preventDefault();
@@ -36,9 +41,7 @@ const handleChange=(e)=>{
   // }
 
   const deleteCourse =(id)=>{
-    var course="";
-    axios.get(`/courses/${id}`).then((response)=>{console.log(response.data);course=response.data.title},()=>{});
-    axios.delete(`/courses/${id}`).then((response)=>{console.log("delete Sucessfull");toast.success("Delete Successfull");{props.updateData(course)}},(error)=>{console.log("Error in deleting")});
+    axios.delete(`/courses/${id}`).then((response)=>{console.log("delete Sucessfull");toast.success("Delete Successfull");},(error)=>{console.log("Error in deleting")});
 }
     return <>
         <ToastContainer/>
@@ -50,7 +53,7 @@ const handleChange=(e)=>{
     <p className="">{props.description}</p>
     <div className="button">
     <a href="#" className="btn btn-primary"onClick={()=>{  props.updateCourse(props.id)}}style={{backgroundColor:"#4E6C50"}}>Update</a>
-    <a href="#" className="btn btn-primary" onClick={()=>{deleteCourse(props.id)}}style={{backgroundColor:"#4E6C50"}}>Delete</a>
+    <a href="#" className="btn btn-primary" onClick={()=>{props.updateData(props.id);deleteCourse(props.id)}}style={{backgroundColor:"#4E6C50"}}>Delete</a>
     </div> </div>
 }
 {

@@ -19,14 +19,17 @@ var i=0;
   );
     }
 
-    const updateData=(course)=>{
-      setCourse(Course.filter((c)=>(c.title!==course)));
+    const updateData=(Id)=>{
+     
+     const newCourse= Course.filter((c)=>(c._id!==Id));
+     setCourse(newCourse);
      
     }
     const updateCourse=(Id)=>{   
 // console.log(Id);
 setId(Id);
-console.log(id);
+
+// console.log(id);
     }
 
     

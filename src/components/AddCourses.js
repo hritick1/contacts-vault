@@ -50,18 +50,18 @@ setCourse1({title:"",description:""});
          <ToastContainer/>
         <div className="maincon">
         <div className="box1">
-    <h4 className="">AddCourses</h4>
+    <h4 className="">Add-Contacts</h4>
 
     <form onSubmit={handleForm}>
 
     <div className="">
-    <label for="title" className="form-label">Enter Subject Title:</label>
+    <label for="title" className="form-label">Name:</label>
     <input type="text" className="form-control" id="title"name="title" value={Course1.title} onChange={(e)=>handleChange(e)} aria-describedby="name"/>
   </div>
 
   <div class="">
-  <label for="desc" class="form-label">Enter Subject Description</label>
-  <textarea class="form-control" id="desc" rows="3"name="description"value={Course1.description}onChange={(e)=>handleChange(e)}></textarea>
+  <label for="desc" class="form-label">Mobile No:</label>
+  <input type="number" className="form-control" id="desc" name="description"value={Course1.description}onChange={(e)=>handleChange(e)}></input>
 </div>
 
   <button type="submit" className="btn btn-primary mt-2" style={{backgroundColor:"#4E6C50"}}>Submit</button>

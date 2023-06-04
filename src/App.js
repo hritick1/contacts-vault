@@ -5,9 +5,6 @@ import Signup from './components/Signup';
 import ViewCourses from './components/ViewCourses';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AddCourses from './components/AddCourses';
-import UpdateCourse from './components/UpdateCourse';
-import Admin from './components/Admin';
 import { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,9 +23,6 @@ function App() {
         <Route exact path="/" element={<Login setisLogin={setisLogin} isLogin={isLogin}/>}/>
         <Route exact path="/viewCourses" element={<ViewCourses Course={Course} setCourse={setCourse}/>}/>
         <Route exact path="/signUp" element={<Signup/>}/>
-        <Route exact path="/addCourse" element={<AddCourses/>}/>
-        <Route exact path="/updateCourse/:id" element={<UpdateCourse />}/>
-        <Route exact path="/admin" element={<Admin/>}/>
       </Routes>
       </Router>
       

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import './Card.css'
@@ -6,7 +6,7 @@ import './Card.css'
 
 const Contact = (props) => {
 
-const [data, setData] = useState({ title: props.subject, description: props.description });
+const [data, setData] = useState({ name: props.name, number: props.number });
 
 
 const handleChange=(e)=>{
@@ -40,8 +40,8 @@ const handleChange=(e)=>{
         { props.id!==props.Id &&  
        
   <div className="element">
-    <h5 className="" >{props.subject}</h5>
-    <p className="">{props.description}</p>
+    <h5 className="" >{props.name}</h5>
+    <p className="">{props.number}</p>
     <div className="button">
     <a href="#" className="btn btn-primary"onClick={(e)=>{ e.preventDefault(); props.updateContact(props.id)}}style={{backgroundColor:"#4E6C50"}}>Update</a>
     <a href="#" className="btn btn-primary" onClick={(e)=>{e.preventDefault();props.updateData(props.id);deleteContacts(props.id)}}style={{backgroundColor:"#4E6C50"}}>Delete</a>
@@ -52,8 +52,8 @@ const handleChange=(e)=>{
 props.id===props.Id  && 
  
   <div className='editContent'>
-<input type="text" value={data.title} name="title" onChange={(e)=>handleChange(e)}/>
-<input type="number" value={data.description} name="description" onChange={(e)=>handleChange(e)}/>
+<input type="text" value={data.title} name="name" onChange={(e)=>handleChange(e)}/>
+<input type="number" value={data.description} name="number" onChange={(e)=>handleChange(e)}/>
 <a className='btn btn-primary' style={{backgroundColor:"#4E6C50"}} onClick={saveData}>Save</a>
   </div>
 }</div>

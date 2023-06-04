@@ -2,8 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom/dist';
 import { ToastContainer, toast } from 'react-toastify';
-import base_url from './Apis';
-// chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+
 const Login = ({setisLogin}) => {
 const navigate=useNavigate();
 const [User, setUser] = useState([]);
@@ -12,13 +11,13 @@ const handleForm=async(e)=>{
   e.preventDefault();
   console.log(User);
 login(User);
-// console.log(tok);
+// console.log(tok)
 
  }
  const doAfterLogin=(response)=>{
   setTimeout(()=>{
     toast.success("Login Successfull");
-    navigate('/viewCourses')},3000);
+    navigate('/viewContacts')},3000);
   axios.defaults.headers.common['Authorization']='Bearer '+response.data.accessToken;
 setisLogin(true); sessionStorage.setItem("isLoggedIn", "true");
  }

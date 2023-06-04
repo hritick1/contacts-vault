@@ -10,7 +10,7 @@ const ViewContacts = ({Contacts,setContacts}) => {
   const [id, setId] = useState(null);
 
     const getAllContactsFromServer=()=>{
-    axios.get(`/courses`).then(
+    axios.get(`/contacts`).then(
     (response)=>{console.log(response.data);setContacts(response.data);
    setLoading(false)},
     (error)=>{console.log(error);}

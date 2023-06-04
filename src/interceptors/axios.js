@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL="https://course-app.onrender.com";
+axios.defaults.baseURL="http://localhost:3001";
 axios.defaults.withCredentials = true;
 axios.interceptors.response.use(res=>res,async err=>{
     if(err.response.status==400){

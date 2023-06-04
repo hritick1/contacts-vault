@@ -27,12 +27,12 @@ const handleChange=(e)=>{
 
 
  const update=(Id)=>{
-  axios.put(`/courses/${Id}`,data);
+  axios.put(`/contacts/${Id}`,data);
  }
  
 
   const deleteContacts =(id)=>{
-    axios.delete(`/courses/${id}`).then((response)=>{console.log("delete Sucessfull");toast.success("Delete Successfull");},(error)=>{console.log("Error in deleting")});
+    axios.delete(`/contacts/${id}`).then((response)=>{console.log("delete Sucessfull");toast.success("Delete Successfull");},(error)=>{console.log("Error in deleting")});
 }
     return <>
         <ToastContainer/>
@@ -52,8 +52,8 @@ const handleChange=(e)=>{
 props.id===props.Id  && 
  
   <div className='editContent'>
-<input type="text" value={data.title} name="name" onChange={(e)=>handleChange(e)}/>
-<input type="number" value={data.description} name="number" onChange={(e)=>handleChange(e)}/>
+<input type="text" value={data.name} name="name" onChange={(e)=>handleChange(e)}/>
+<input type="number" value={data.number} name="number" onChange={(e)=>handleChange(e)}/>
 <a className='btn btn-primary' style={{backgroundColor:"#4E6C50"}} onClick={saveData}>Save</a>
   </div>
 }</div>

@@ -15,19 +15,17 @@ const AddContacts = ({Contacts, setContacts}) => {
         e.preventDefault();
         console.log(Contacts);
        setContacts(Contacts=>[...Contacts,Contacts1]);
+      // setContacts(Contacts1);
         postDataToServer(Contacts1);
 setContacts1({name:"",number:""});
 // console.log(Course);
        }
 
        const postDataToServer=(data)=>{
-          axios.post(`/courses`,data).then(
+          axios.post(`/contacts`,data).then(
             (response)=>{
          console.log(response);
          toast.success("Contacts added sucessfully");
-            },
-            (error)=>{
-        toast.error(error.response.data);
             }
           )
        }
@@ -53,7 +51,7 @@ setContacts1({name:"",number:""});
 
   <div class="">
   <label for="desc" class="form-label">Mobile No:</label>
-  <input type="number" className="form-control" id="desc" name="description"value={Contacts1.number}onChange={(e)=>handleChange(e)}></input>
+  <input type="number" className="form-control" id="desc" name="number"value={Contacts1.number}onChange={(e)=>handleChange(e)}></input>
 </div>
 
   <button type="submit" className="btn btn-primary mt-2" style={{backgroundColor:"#4E6C50"}}>Submit</button>

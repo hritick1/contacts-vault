@@ -1,31 +1,24 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-import base_url from './Apis';
 import { ToastContainer, toast } from 'react-toastify';
-import './AddCourses.css';
-const AddCourses = ({Course, setCourse}) => {
+import './AddContact.css';
+const AddContacts = ({Contacts, setContacts}) => {
     
     useEffect(() => {
         document.title="Add Courses";
         }, []);
-       const [Course1, setCourse1] = useState({title:"",description:""});
 
-
+       const [Contacts1, setContacts1] = useState({title:"",description:""});
 
        const handleForm=(e)=>{
         e.preventDefault();
-        console.log(Course);
-       setCourse(Course=>[...Course,Course1])
-        postDataToServer(Course1);
-setCourse1({title:"",description:""});
+        console.log(Contacts);
+       setContacts(Contacts=>[...Contacts,Contacts1])
+        postDataToServer(Contacts1);
+setContacts1({title:"",description:""});
 // console.log(Course);
        }
-
-
-
-     
-
 
        const postDataToServer=(data)=>{
           axios.post(`/courses`,data).then(
@@ -39,10 +32,9 @@ setCourse1({title:"",description:""});
           )
        }
 
-
        const handleChange=(e)=>{
         const value=e.target.value;
-        setCourse1({...Course1,[e.target.name]:value});
+        setContacts1({...Contacts1,[e.target.name]:value});
        }
 
 
@@ -56,20 +48,20 @@ setCourse1({title:"",description:""});
 
     <div className="">
     <label for="title" className="form-label">Name:</label>
-    <input type="text" className="form-control" id="title"name="title" value={Course1.title} onChange={(e)=>handleChange(e)} aria-describedby="name"/>
+    <input type="text" className="form-control" id="title"name="title" value={Contacts1.title} onChange={(e)=>handleChange(e)} aria-describedby="name"/>
   </div>
 
   <div class="">
   <label for="desc" class="form-label">Mobile No:</label>
-  <input type="number" className="form-control" id="desc" name="description"value={Course1.description}onChange={(e)=>handleChange(e)}></input>
+  <input type="number" className="form-control" id="desc" name="description"value={Contacts1.description}onChange={(e)=>handleChange(e)}></input>
 </div>
 
   <button type="submit" className="btn btn-primary mt-2" style={{backgroundColor:"#4E6C50"}}>Submit</button>
-  <button type="button" className="btn btn-primary ms-5 mt-2" onClick={()=>{setCourse1({id:"",title:"",description:""})}}style={{backgroundColor:"#4E6C50"}}>Clear</button>
+  <button type="button" className="btn btn-primary ms-5 mt-2" onClick={()=>{setContacts1({title:"",description:""})}}style={{backgroundColor:"#4E6C50"}}>Clear</button>
 </form>
  
 </div> </div>
     </>;
 }
 
-export default AddCourses;
+export default AddContacts;

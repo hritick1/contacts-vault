@@ -1,40 +1,59 @@
-Course Hub
-Course Hub is a web application that provides a platform for users to add, update, delete, and view courses. 
-It also includes authentication functionality for user login and logout using JWT (JSON Web Tokens).
+Contact Vault
+Contact Vault is a full-stack React.js application that allows users to securely store and manage their contacts.
+Users can sign up or log in to their account to access their contacts. 
+They can view their existing contacts, add new contacts, update contact information, and delete contacts.
 
-Deployment
-The project is deployed and accessible at: https://course-app-hritick1.vercel.app/
+Deployed Application
+The Contact Vault application is deployed and can be accessed at: https://contacts-vault.vercel.app/
 
 Features
-Course Management: Users can perform CRUD (Create, Read, Update, Delete) operations on courses, allowing them to add new courses, view existing courses, update course details, and delete unwanted courses.
-User Authentication: The application includes user authentication using JWT, allowing users to securely log in and log out of their accounts.
-Responsive Design: The user interface is designed to be responsive and compatible with various devices and screen sizes.
+User Authentication: Users can sign up for a new account or log in to their existing account to access their contacts.
+Contact Management: Users can view their contacts in a list format, add new contacts, update contact information, and delete contacts.
+Real-Time Updates: The contact list is updated in real-time, allowing users to see any changes made by other users.
 
 Technologies Used
-HTML: Used for the structure and layout of the web pages.
-CSS: Applied for styling and visual enhancements.
-JavaScript: Implemented the functionality and interactions of the web application.
-React: A JavaScript library for building user interfaces, utilized for creating reusable UI components and managing state.
-Node.js: A JavaScript runtime used for the server-side implementation.
-Express.js: A web application framework for Node.js, used for creating RESTful APIs.
-MongoDB: A NoSQL database used for storing and managing the course data.
-JWT (JSON Web Tokens): Used for user authentication and session management.
+Front-end:
+React.js: JavaScript library for building user interfaces.
+React Router: Library for handling routing within the application.
+HTML/CSS: Markup language and styling for the user interface.
+Axios: HTTP client for making API requests.
 
-Installation and Setup
+
+Getting Started
+Prerequisites
+Node.js and npm (Node Package Manager) should be installed on your machine.
+
+Installation
 Clone the repository:
-git clone https://github.com/hritick1/Course_Hub.git
-Navigate to the project directory:
 
-cd course-hub
-Install the dependencies for both the server and client:
+git clone <repository-url>
+
+
+Install the dependencies:
+
+cd contact-vault
 npm install
 
-Open your web browser and visit http://localhost:3000 to access the Course Hub application.
 
+Open the application in your browser:
+
+http://localhost:3000
+
+
+Usage
+  
+Sign up for a new account or log in to your existing account.
+  
+Once logged in, you will be redirected to the contact list page.
+View your existing contacts in the list.
+  
+To add a new contact, click on the "Add Contact" button and provide the required information.
+To update a contact, click on the "Update" button next to the contact and make the necessary changes.
+To delete a contact, click on the "Delete" button next to the contact.
+Log out from your account when you are finished.
+  
 Contributing
-Contributions to Course Hub are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to create a pull request.
 
 
-Acknowledgments
-The Course Hub project was inspired by the need for a user-friendly course management system.
-Special thanks to the open-source community for their contributions and resources that facilitated the development of this project.
+Contact If you have any questions or need further assistance, please feel free to contact me at hjha9999@gmail.com.
